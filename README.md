@@ -1,4 +1,5 @@
 # spiderman-dashboard
+[![Build Status](https://travis-ci.org/mazarag2/spiderman-dashboard.svg?branch=master)](https://travis-ci.org/mazarag2/spiderman-dashboard)
 
 ## Project setup
 ```
