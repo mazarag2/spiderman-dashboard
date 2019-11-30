@@ -14,3 +14,4 @@ deploy:
   bucket: "spiderman-dashboard"
   skip_cleanup: true
   region: "us-west-1"
+  local_dir: dist
