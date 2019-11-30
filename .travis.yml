@@ -1,0 +1,16 @@
+language: node_js
+install:
+- nvm install 10.16.2
+- nvm use 10.16.2
+- npm install
+script:
+- npm run build
+after_success:
+- echo Build Succeded
+deploy:
+  provider: s3
+  access_key_id: $AWS_KEY_ID
+  secret_access_key: $AWS_ACCESS_KEY
+  bucket: "spiderman-dashboard"
+  skip_cleanup: true
+  region: "us-west-1"
