@@ -1,6 +1,8 @@
 # spiderman-dashboard
 [![Build Status](https://travis-ci.org/mazarag2/spiderman-dashboard.svg?branch=master)](https://travis-ci.org/mazarag2/spiderman-dashboard)
 
+http://spiderman-dashboard.s3-website-us-west-1.amazonaws.com/
+
 ## Project setup
 ```
 npm install
