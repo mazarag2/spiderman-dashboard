@@ -1,19 +1,32 @@
 <template>
   <div class="spiderCount">
-      <h1>Welcome to the spiderman dashboard</h1>
-      <b-table striped hover small dark :items="items" :fields="fields" ></b-table>
+      <h1>Welcome to the spiderman dashboard </h1>
+        <b-table striped hover small dark :items="items" :fields="fields" >
+            <template v-slot:cell(show_details)="row">
+                <b-button size="sm" @click="row.toggleDetails">
+                    {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+                </b-button>
+            </template>
+            <template v-slot:row-details="row">
+               <SpiderEvent v-bind:username = "row.item.name"></SpiderEvent>
+            </template>
+        </b-table>
   </div>
 </template>
 <script>
 
 import axios from 'axios';
+import SpiderEvent from './SpiderEvent.vue'
 
 export default {
+  components : { SpiderEvent },
   name: 'spiderCount',
+  props : ['show_details'],
   data() {
        return {
         sortable : true,
-        fields : [{
+        fields : [
+        {
 
             key : 'name',
             sortable : true
@@ -30,6 +43,12 @@ export default {
             key : 'milesmorales_count',
             label : 'Miles Morales',
             sortable : true
+
+        },
+        {
+            key: 'show_details',
+            label : 'Details',
+            
 
         }],
         items: []
@@ -49,7 +68,7 @@ export default {
             return profileData.data;
 
         }));
-       
+
         this.items = userProfileData;
 
     }

@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/spiderIcon.png">
-    <spiderCountTable></spiderCountTable>
+    <spider-count-table></spider-count-table>
   </div>
 </template>
 
 <script>
 
 import spiderCountTable from './components/spiderCountTable.vue'
+
 
 export default {
   name: 'app',
